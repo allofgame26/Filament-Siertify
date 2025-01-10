@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('m_periode', function (Blueprint $table) {
+        Schema::create('m_vendor_pelatihan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_periode');
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
-            $table->string('deskripsi_periode');
+            $table->string('nama_vendor_pelatihan');
+            $table->string('alamat_vendor_pelatihan');
+            $table->string('kota_vendor_pelatihan');
+            $table->string('no_telp_vendor_pelatihan');
+            $table->string('web_vendor_pelatihan');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('m_periode');
+        Schema::dropIfExists('m_vendor_pelatihan');
     }
 };

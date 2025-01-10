@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('id_identitas')->constrained('m_identitas_diri','id')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('id_jenis_pengguna')->constrained('m_jenis_pengguna','id')->cascadeOnUpdate()->cascadeOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });
