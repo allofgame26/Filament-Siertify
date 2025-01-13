@@ -19,5 +19,13 @@ class m_periode extends Model
     ];
 
     protected $guarded = [];
+
+    public function detail_sertifikasi(){
+        return $this->hasMany(t_detail_sertifikasi::class,'id_periode','id');
+    
+    }
+    public function detail_pelatihan(){
+        return $this->hasMany(t_detail_pelatihan::class,'id_periode','id');
+    }
     
 }

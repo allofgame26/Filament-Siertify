@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('m_sertifkasi', function (Blueprint $table) {
+        Schema::create('m_sertifikasi', function (Blueprint $table) {
             $table->id();
             $table->string('nama_sertifikasi');
             $table->foreignId('id_vendor_sertifikasi')->constrained('m_vendor_sertifikasi','id')->cascadeOnUpdate()->cascadeOnDelete();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('m_sertifkasi');
+        Schema::dropIfExists('m_sertifikasi');
     }
 };

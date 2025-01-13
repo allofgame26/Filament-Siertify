@@ -27,4 +27,16 @@ class m_pelatihan extends Model
     public function vendor(){
         return $this->belongsTo(m_vendor_pelatihan::class, 'id_vendor_pelatihan','id');
     }
+
+    public function detail_pelatihan(){
+        return $this->hasMany(t_detail_pelatihan::class, 'id_pelatihan','id');
+    }
+
+    public function tagging_bd(){
+        return $this->hasMany(t_tagging_bd_pelatihan::class,'id_pelatihan','id');
+    }
+
+    public function tagging_mk(){
+        return $this->hasMany(t_tagging_mk_pelatihan::class,'id_pelatihan','id');
+    }
 }

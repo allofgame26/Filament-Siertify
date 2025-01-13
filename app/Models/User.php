@@ -47,4 +47,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function peserta_sertifikasi(){
+        return $this->hasMany(t_peserta_sertifikasi::class, 'id_user', 'id');
+    }
+
+    public function peserta_pelatihan(){
+        return $this->hasMany(t_peserta_pelatihan::class, 'id_user', 'id');
+    }
+
+    public function mk_dosen(){
+        return $this->hasMany(t_detail_mk_dosen::class, 'id_user','id');
+    }
+
+    public function bd_dosen(){
+        return $this->hasMany(t_detail_bd_dosen::class, 'id_user','id');
+    }
 }
